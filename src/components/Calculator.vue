@@ -7,147 +7,14 @@
             <div id="keys-wrap">
                 <ul id="keys-list">
                     <li
-                        id="seven-key"
-                        class="calc-key"
-                        name="digit-keys"
+                        v-for="key in keys"
+                        :key="key.id"
+                        :id="key.id"
+                        :class="key.class"
+                        :name="key.name"
                         @click="keyClick"
                     >
-                        <span>7</span>
-                    </li>
-                    <li
-                        id="eight-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>8</span>
-                    </li>
-                    <li
-                        id="nine-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>9</span>
-                    </li>
-                    <li
-                        id="four-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>4</span>
-                    </li>
-                    <li
-                        id="five-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>5</span>
-                    </li>
-                    <li
-                        id="six-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>6</span>
-                    </li>
-                    <li
-                        id="one-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>1</span>
-                    </li>
-                    <li
-                        id="two-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>2</span>
-                    </li>
-                    <li
-                        id="three-key"
-                        class="calc-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>3</span>
-                    </li>
-                    <li
-                        id="clear-key"
-                        class="calc-key"
-                        name="special-keys"
-                        @click="keyClick"
-                    >
-                        <span>C</span>
-                    </li>
-                    <li
-                        id="clear-one-key"
-                        class="calc-key"
-                        name="special-keys"
-                        @click="keyClick"
-                    >
-                        <span>CE</span>
-                    </li>
-                    <li
-                        id="addition-key"
-                        class="calc-key tall-key"
-                        name="operator-keys"
-                        @click="keyClick"
-                    >
-                        <span>+</span>
-                    </li>
-                    <li
-                        id="subtraction-key"
-                        class="calc-key"
-                        name="operator-keys"
-                        @click="keyClick"
-                    >
-                        <span>-</span>
-                    </li>
-                    <li
-                        id="multiply-key"
-                        class="calc-key"
-                        name="operator-keys"
-                        @click="keyClick"
-                    >
-                        <span>*</span>
-                    </li>
-                    <li
-                        id="divide-key"
-                        class="calc-key"
-                        name="operator-keys"
-                        @click="keyClick"
-                    >
-                        <span>/</span>
-                    </li>
-                    <li
-                        id="equal-key"
-                        class="calc-key equal-key"
-                        name="special-keys"
-                        @click="keyClick"
-                    >
-                        <span>=</span>
-                    </li>
-                    <li
-                        id="zero-key"
-                        class="calc-key zero-key"
-                        name="digit-keys"
-                        @click="keyClick"
-                    >
-                        <span>0</span>
-                    </li>
-                    <li
-                        class="calc-key"
-                        name="decimal-point-key"
-                        @click="keyClick"
-                    >
-                        <span>.</span>
+                        <span>{{ key.value }}</span>
                     </li>
                 </ul>
             </div>
@@ -160,6 +27,116 @@ export default {
     name: "Calculator",
     data: function () {
         return {
+            keys: [
+                {
+                    name: "digit-keys",
+                    id: "zero-key",
+                    class: "calc-key zero-key",
+                    value: 0,
+                },
+                {
+                    name: "digit-keys",
+                    id: "one-key",
+                    class: "calc-key",
+                    value: 1,
+                },
+                {
+                    name: "digit-keys",
+                    id: "two-key",
+                    class: "calc-key",
+                    value: 2,
+                },
+                {
+                    name: "digit-keys",
+                    id: "three-key",
+                    class: "calc-key",
+                    value: 3,
+                },
+                {
+                    name: "digit-keys",
+                    id: "four-key",
+                    class: "calc-key",
+                    value: 4,
+                },
+                {
+                    name: "digit-keys",
+                    id: "five-key",
+                    class: "calc-key",
+                    value: 5,
+                },
+                {
+                    name: "digit-keys",
+                    id: "six-key",
+                    class: "calc-key",
+                    value: 6,
+                },
+                {
+                    name: "digit-keys",
+                    id: "seven-key",
+                    class: "calc-key",
+                    value: 7,
+                },
+                {
+                    name: "digit-keys",
+                    id: "eight-key",
+                    class: "calc-key",
+                    value: 8,
+                },
+                {
+                    name: "digit-keys",
+                    id: "nine-key",
+                    class: "calc-key",
+                    value: 9,
+                },
+                {
+                    name: "special-keys",
+                    id: "clear-key",
+                    class: "calc-key",
+                    value: "C",
+                },
+                {
+                    name: "special-keys",
+                    id: "clear-one-key",
+                    class: "calc-key",
+                    value: "CE",
+                },
+                {
+                    name: "operator-keys",
+                    id: "addition-key",
+                    class: "calc-key",
+                    value: "+",
+                },
+                {
+                    name: "operator-keys",
+                    id: "subtraction-key",
+                    class: "calc-key",
+                    value: "-",
+                },
+                {
+                    name: "operator-keys",
+                    id: "divide-key",
+                    class: "calc-key",
+                    value: "/",
+                },
+                {
+                    name: "operator-keys",
+                    id: "multiply-key",
+                    class: "calc-key",
+                    value: "*",
+                },
+                {
+                    name: "special-keys",
+                    id: "equal-key",
+                    class: "calc-key equal-key",
+                    value: "=",
+                },
+                {
+                    name: "special-keys",
+                    id: "decimal-point-key",
+                    class: "calc-key",
+                    value: ".",
+                },
+            ],
             result: "",
             allOperatorsRegEx: /[/*+-]/,
             allOperatorsArray: ["/", "*", "+", "-"],
@@ -168,7 +145,6 @@ export default {
             twoNumbersRegEx: /^[-]?[0-9.?]+[/*+-][0-9.?]+$/,
         };
     },
-    props: {},
     methods: {
         keyClick: function (key) {
             switch (key.path[1].getAttribute("name")) {

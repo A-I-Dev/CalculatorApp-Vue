@@ -66,6 +66,12 @@ body:before {
 	grid-gap: 10px;
 	grid-column: 4;
 	grid-template: repeat(5, auto) / repeat(4, minmax(auto, 82px));
+	grid-template-areas:
+		'clear clearOne divide multiply'
+		'seven eight nine subtract'
+		'four five six add'
+		'one two three equal'
+		'zero zero decimal equal';
 	height: 100%;
 }
 
@@ -107,48 +113,59 @@ body:before {
 }
 
 #clear-key {
-	grid-row-start: 1;
-	grid-column-start: 1;
-	grid-column-end: 2;
+	grid-area: clear;
 }
-
 #clear-one-key {
-	grid-row-start: 1;
-	grid-column-start: 2;
-	grid-column-end: 3;
+	grid-area: clearOne;
 }
-
 #divide-key {
-	grid-row-start: 1;
-	grid-column-start: 3;
-	grid-column-end: 4;
+	grid-area: divide;
 }
 
 #multiply-key {
-	grid-row-start: 1;
-	grid-column-start: 4;
-	grid-column-end: 5;
+	grid-area: multiply;
 }
 
 #subtraction-key {
-	grid-row-start: 2;
-	grid-column-start: 4;
-	grid-column-end: 5;
+	grid-area: subtract;
 }
 
 #addition-key {
-	grid-row-start: 3;
-	grid-row-end: 4;
-	grid-column-start: 4;
+	grid-area: add;
 }
 
 #equal-key {
-	grid-row-start: 4;
-	grid-row-end: 6;
-	grid-column-start: 4;
+	grid-area: equal;
 }
 
 #zero-key {
-	grid-column-start: 1;
-	grid-column-end: 3;
+	grid-area: zero;
+}
+
+#one-key {
+	grid-area: one;
+}
+#two-key {
+	grid-area: two;
+}
+#three-key {
+	grid-area: three;
+}
+#four-key {
+	grid-area: four;
+}
+#five-key {
+	grid-area: five;
+}
+#six-key {
+	grid-area: six;
+}
+#seven-key {
+	grid-area: seven;
+}
+#eight-key {
+	grid-area: eight;
+}
+#nine-key {
+	grid-area: nine;
 }
